@@ -6,13 +6,12 @@ import Signup from './auth/Signup';
 import ForgetPassword from "./auth/ForgetPassword";
 import ResetPassword from "./auth/ResetPassword";
 import VerifyEmail from "./auth/VerifyEmail";
-import Navbar from './components/Navbar';
- 
+import Navbar from "./components/Navbar"
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Navbar />, 
+    element: <Navbar/>,//use mainlayout or navbar  
     children: [
       {
         path: "/login",
@@ -40,10 +39,11 @@ const appRouter = createBrowserRouter([
 
 function App() {
   return (
-    <main>
-      <RouterProvider router={appRouter} /> 
+    <main className="min-h-screen">
+      <RouterProvider router={appRouter} />
     </main>
   );
 }
+
 
 export default App;
