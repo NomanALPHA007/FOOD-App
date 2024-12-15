@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from "./ui/menubar";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
-import { Loader2, Menu, Moon, ShoppingCart, Sun, User } from "lucide-react";
+import { HandPlatter, Loader2, Menu, Moon, PackageCheck, ShoppingCart, Square, SquareMenu, Sun, User, Utensils, UtensilsCrossed } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 import { Label } from "./ui/label";
@@ -145,34 +145,42 @@ const MobileNavbar = () => {
             <span>Profile</span>
           </Link>
           <Link to="/profile" className="flex items-center gap-4 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer hover:text-gray-900 font-medium">
-            <User />
-            <span>Profile</span>
+            <HandPlatter />
+            <span>Order</span>
           </Link>
           <Link to="/profile" className="flex items-center gap-4 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer hover:text-gray-900 font-medium">
-            <User />
-            <span>Profile</span>
+            <ShoppingCart />
+            <span>cart (0)</span>
           </Link>
           <Link to="/profile" className="flex items-center gap-4 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer hover:text-gray-900 font-medium">
-            <User />
-            <span>Profile</span>
+            <SquareMenu />
+            <span>Menu</span>
           </Link>
           <Link to="/profile" className="flex items-center gap-4 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer hover:text-gray-900 font-medium">
-            <User />
-            <span>Profile</span>
+            <UtensilsCrossed />
+            <span>Restaurant</span>
           </Link>
           <Link to="/profile" className="flex items-center gap-4 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer hover:text-gray-900 font-medium">
-            <User />
-            <span>Profile</span>
-          </Link>
-          <Link to="/profile" className="flex items-center gap-4 hover:bg-gray-200 px-3 py-2 rounded-lg cursor-pointer hover:text-gray-900 font-medium">
-            <User />
-            <span>Profile</span>
+            <PackageCheck />
+            <span>Restaurant Orders</span>
           </Link>
         </SheetDescription>
-        <SheetFooter>
+        <SheetFooter className="flex flex-col gap-2">
+          <>
+            <div className="flex flex-row items-center gap-2">
+              <Avatar>
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <h1 className="font-bold text-xl"> Arnob Rizwan </h1>
+
+            </div>
+          </>
+
           <SheetClose asChild>
             <Button type="submit" className="bg-orange hover:bg-hoverOrange">Logout</Button>
           </SheetClose>
+
+
         </SheetFooter>
 
       </SheetContent>
