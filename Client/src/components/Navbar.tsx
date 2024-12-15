@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from "./ui/menubar";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
-import { HandPlatter, Loader2, Menu, Moon, PackageCheck, ShoppingCart,  SquareMenu, Sun, User,  UtensilsCrossed } from "lucide-react";
+import { HandPlatter, Loader2, Menu, Moon, PackageCheck, ShoppingCart, SquareMenu, Sun, User, UtensilsCrossed } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 import { Separator } from "./ui/separator";
@@ -15,31 +15,34 @@ const Navbar = () => {
       <div className="flex items-center justify-between h-14">
 
         <Link to="/">
-          <h1 className="font-bold md:font-extrabold text-2xl">FoodTiger</h1>
+          <h1 className="font-bold md:font-extrabold text-2xl text-black absolute left-4 top-4">FoodTiger</h1>
         </Link>
 
-        <div className="hidden md:flex items-center gap-10">
+
+        <div className="hidden md:flex items-center gap-10"  >
           <div className="hidden md:flex items-center gap-6">
-            <Link to="/">Home</Link>
-            <Link to="/profile">Profile</Link>
-            <Link to="/order/status">Order</Link>
+            <Link to="/" className="text-gray-800 hover:text-gray-600 font-medium ">Home</Link>
+            <Link to="/profile" className="text-gray-800 hover:text-gray-600 font-medium ">Profile</Link>
+            <Link to="/order/status" className="text-gray-800 hover:text-gray-600 font-medium">Order</Link>
+
 
             {
               admin && (
                 <Menubar>
-                  <MenubarMenu><MenubarTrigger>
-                    Dashboard
-                  </MenubarTrigger>
+                  <MenubarMenu>
+                    <MenubarTrigger className="bg-white text-black font-medium px-4 py-2 rounded-md shadow-md hover:bg-gray-100">
+                      Dashboard
+                    </MenubarTrigger>
                     <MenubarContent>
                       <Link to="/admin/restaurant">
-                        <MenubarItem>Restaurant</MenubarItem></Link>
+                        <MenubarItem className="text-black hover:bg-gray-100 hover:text-gray-800">Restaurant</MenubarItem></Link>
                       <Link to="/admin/menu">
-                        <MenubarItem>Menu</MenubarItem></Link>
+                        <MenubarItem className="text-black hover:bg-gray-100 hover:text-gray-800">Menu</MenubarItem></Link>
                       <Link to="/admin/orders">
-                        <MenubarItem>Orders</MenubarItem></Link>
+                        <MenubarItem className="text-black hover:bg-gray-100 hover:text-gray-800">Orders</MenubarItem></Link>
                     </MenubarContent>
                   </MenubarMenu>
-                  </Menubar>
+                </Menubar>
               )}
           </div>
           <div className="flex items-center gap-4">
@@ -70,23 +73,23 @@ const Navbar = () => {
             <div>
               <Avatar>
                 <AvatarImage />
-                <AvatarFallback>CN</AvatarFallback>
+                <AvatarFallback>AR</AvatarFallback>
               </Avatar>
             </div>
             <div>
-            {
-              loading ? (
-                <Button className="bg-orange hover:bg-hoverOrange">
+              {
+                loading ? (
+                  <Button className="bg-orange hover:bg-hoverOrange">
 
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Please Wait
-                </Button>
-              ) : (
-                <Button className="bg-orange hover:bg-hoverOrange">Logout
-                </Button>
-              )
-            }
-          </div>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Please Wait
+                  </Button>
+                ) : (
+                  <Button className="bg-orange hover:bg-hoverOrange">Logout
+                  </Button>
+                )
+              }
+            </div>
           </div>
         </div>
         <div className="md:hidden lg:hidden">
@@ -166,7 +169,7 @@ const MobileNavbar = () => {
           <>
             <div className="flex flex-row items-center gap-2">
               <Avatar>
-                <AvatarFallback>CN</AvatarFallback>
+                <AvatarFallback>AR</AvatarFallback>
               </Avatar>
               <h1 className="font-bold text-xl"> Arnob Rizwan </h1>
 
@@ -184,5 +187,6 @@ const MobileNavbar = () => {
     </Sheet>
 
   )
-} 
+}
+
 
